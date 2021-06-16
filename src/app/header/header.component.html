@@ -1,0 +1,23 @@
+<header>
+    <div class="container">
+      <div class="row auth-div">
+        <div class="col-md-3">
+          <h4>Authenticated: {{isAuthenticated}}</h4>
+        </div>
+        <div 
+          *ngIf="router.url != '/login'"
+          class="col-md-3">
+          <button 
+              *ngIf="!isAuthenticated" 
+              class="btn btn-outline-primary"
+              (click)="login()">Login</button>
+          <button 
+              *ngIf="isAuthenticated"
+              class="btn btn-danger"
+              (click)="logout()">Logout</button>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </header>
+  
